@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SeyedAli MirHosseini — Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="header" id="top">
+    <h1>SeyedAli MirHosseini</h1>
+    <p>Portfolio of Audio + Video Projects</p>
+  </div>
+
+  <div class="topnav">
+    <div class="topnav-left">
+      <!-- one-page anchors (still single page) -->
+      <a href="#video">Video</a>
+      <a href="#audio">Audio</a>
+      <a href="#about">About</a>
+    </div>
+
+    <div class="topnav-right">
+      <button onclick="toggleDarkMode()" class="navBtn" style="cursor:pointer; padding:10px 12px; border-radius:8px; border:none;">
+        Toggle Dark Mode
+      </button>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+
+  <div class="main">
+    <!-- LEFT COLUMN: main portfolio content -->
+    <div class="leftcolumn">
+      <!-- VIDEO -->
+      <div class="card" id="video">
+        <h2>Video Reel</h2>
+        <h5>Chernobyl</h5>
+
+        <!-- Google Drive embedded video -->
+        <iframe src="https://drive.google.com/file/d/11-lYN3zBPNLdBRp5orEwMWgufSTCn3Au/preview" width="100%" height="400" allow="autoplay" allowfullscreen style="border-radius: 10px;"></iframe>
+
+      </div>
+
+      <!-- AUDIO -->
+      <div class="card" id="audio">
+        <h2>Audio Work</h2>
+        <h5>Echoes of The Past</h5>
+        <audio controls>
+          <source src="media/Echoes of The Past.wav" type="audio/wav">
+        </audio>
+
+        <p>
+          Sounds of nature and daily life mixed by me.
+        </p>
+      </div>
+
+      <!-- CONTACT -->
+      <div class="card" id="contact">
+        <h2>Contact</h2>
+        <p>
+          Email: <a href="mailto:ali.mirhoseini83@gmail.com">ali.mirhoseini83@gmail.com</a><br>
+          Discord: <a href="https://discordapp.com/users/venoos69">venoos69</a><br>
+        </p>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN: sidebar -->
+    <div class="rightcolumn">
+      <div class="card" id="about">
+        <h2>About Me</h2>
+
+
+        <p>
+          Hi, I’m <strong>SeyedAli MirHosseini</strong>. I create <em>audio + video</em> projects focused on nature and cities.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Skills</h3>
+        <ul>
+          <li>Editing</li>
+          <li>Sound design</li>
+          <li>Recording</li>
+          <li>Photography</li>
+          <li>Content Creation</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Tools</h3>
+        <ol>
+          <li> DaVinci</li>
+          <li> Reaper</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <h3>Current occupation</h3>
+        <img src="images/yorku.png" alt="Uni image" style="width: 100%; height: auto; max-width: 330px; max-height: 330px; border-radius: 8px; object-fit: cover; margin: 10px auto; display: block;">
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <h2 id="footerHeader">Footer</h2>
+    <button onclick="updateFooter()">Update Footer Text</button>
+    <p style="margin:10px 0 0;">
+      <small>Built by SeyedAli MirHosseini</small>
+    </p>
+  </div>
+
+  <!-- Fullscreen overlay -->
+  <div class="fullscreen-overlay" id="fullscreenOverlay" onclick="hideOverlay()">
+    <img src="" alt="Fullscreen Image" id="fullscreenImage" />
+  </div>
+
+  <script>
+    function updateFooter() {
+      let element = document.getElementById('footerHeader');
+      element.textContent = 'Thanks for visiting my portfolio!';
+      element.style.color = 'red'; // demonstrates changing CSS property
+    }
+
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+
+    function showFullScreenImage(element) {
+      let overlay = document.getElementById('fullscreenOverlay');
+
+      // take background-image: url("...") and slice out the URL
+      let bgImage = element.style.backgroundImage.slice(5, -2);
+
+      let image = document.getElementById('fullscreenImage');
+      image.src = bgImage;
+
+      overlay.style.display = 'flex';
+    }
+
+    function hideOverlay() {
+      let overlay = document.getElementById('fullscreenOverlay');
+      overlay.style.display = 'none';
+    }
+  </script>
+</body>
+</html>
